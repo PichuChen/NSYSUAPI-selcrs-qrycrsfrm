@@ -17,12 +17,7 @@
 
 //Read File
 $handle = fopen("http://selcrs.nsysu.edu.tw/menu1/qrycourse.asp", "r");
-$str = "";
-while(!feof($handle)){
-	$str .= fread($handle,1024);
-
-};
-
+$str = stream_get_contents($handle);
 //Parse HTML
 $doc = new DOMDocument();
 $doc->loadHTML($str);
