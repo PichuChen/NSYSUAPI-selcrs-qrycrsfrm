@@ -27,7 +27,7 @@ $depList =  $selectList->item(1)->getElementsByTagName('option'); // name = D0
 //output
 $ans = [];
 foreach($depList as $item){
-	$ans[] = $item->nodeValue;
+	$ans[] = array('label' => $item->nodeValue,'value'=> $item->getAttribute('value'));
 }
 
 return $ans;
