@@ -28,7 +28,7 @@ $handle = fopen("http://selcrs.nsysu.edu.tw/menu1/dplycourse.asp?D0=1012&D1=$D1&
 $str = stream_get_contents($handle);
 //Parse HTML
 $doc = new DOMDocument();
-$doc->loadHTML($str);
+@$doc->loadHTML($str);
 $selectList = $doc->getElementsByTagName('table');
 $depList =  $selectList->item(0)->getElementsByTagName('tr'); // name = D0
 $itemLength = array();
