@@ -15,21 +15,33 @@
    limitations under the License.
 */
 
+
 //Set Option
 $opts = array(
   'http'=>array(
     'method'=>"POST",
+    'header' => 'Content-type: application/x-www-form-urlencoded\r\n',
+//		'Cookie: ASPSESSIONIDCCRCQQDD=ECMFONIBGBMAMKKHJFOGEEFE' ,
     'content'=> "SID=$SID&PASSWD=$PASSWD&ACTION=0&INTYPE=1",
+    'ignore_errors' => true,
   )
 );
+
 $ctx = stream_context_create($opts);
 //Read File
-$handle = fopen("http://selcrs.nsysu.edu.tw/scoreqry/sco_query.asp", "r",false,$ctx);
+$handle = fopen("http://selcrs.nsysu.edu.tw/scoreqry/sco_query.asp", "rb",false,$ctx);
+//$handle = fopen("http://selcrs.nsysu.edu.tw/scoreqry/sco_query.asp?action=1&SID=B983040003&PASSWD=193068",'r');
 $str = stream_get_contents($handle);
 $str=iconv("big5","UTF-8",$str); 
 if(!strcmp($str,' 資料錯誤請重新輸入 ')){
 	return false;
 }else{
+	$meta = stream_get_meta_data($handle);
+	$tmp = array();
+	preg_match('/^(Set-Cookie: )(.*) path/',$meta['wrapper_data'][7],$tmp);
+	if(isset($this)){
+		$this->cookie = $tmp[2];
+	}
 	return true;
 }
 
