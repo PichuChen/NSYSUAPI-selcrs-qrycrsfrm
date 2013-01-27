@@ -17,3 +17,14 @@ input:
 <li>D1 : 開課系所</li>
 </ul>
 
+
+testLogin
+
+輸入帳號密碼檢查是否合法
+
+input:
+<ul>
+<li>SID : 帳號</li>
+<li>PASSWD : 密碼</li>
+</ul>
+
