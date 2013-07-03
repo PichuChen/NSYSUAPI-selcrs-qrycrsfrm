@@ -22,7 +22,7 @@ $opts = array(
   'http'=>array(
     'method'=>"POST",
     //'header' => 'Content-type: application/x-www-form-urlencoded\r\n',
-    'content'=> 'HIS=1&IDNO=&ITEM=&D0='.$D0.'&D1=' .$D1 . '&D2=&CLASS_COD=&SECT_COD=&TYP=1&teacher=&crsname=&T3=&WKDAY=&SECT=&nowhis=1&B1=%B6%7D%A9l%ACd%B8%DF',
+    'content'=> 'HIS=2&IDNO=&ITEM=&D0='.$D0.'&D1=' .$D1 . '&D2=&CLASS_COD=&SECT_COD=&TYP=1&teacher=&crsname=&T3=&WKDAY=&SECT=&nowhis=1&B1=%B6%7D%A9l%ACd%B8%DF',
   )
 );
 
