@@ -14,6 +14,7 @@ getClassofDepartment.php
 
 input:
 <ul>
+<li>D0 : 學年度</li>
 <li>D1 : 開課系所</li>
 </ul>
 
@@ -27,4 +28,25 @@ input:
 <li>SID : 帳號</li>
 <li>PASSWD : 密碼</li>
 </ul>
+
+loginStudentCourse.php
+
+登入選課系統並取得可用之Cookie(SESSION)
+
+input:
+<ul>
+<li>SID : 帳號</li>
+<li>PASSWD : 密碼</li>
+</ul>
+
+
+getStudentCourse.php
+
+取得該SESSION之當學期選課紀錄
+
+input:
+<ul>
+<li>cookie : cookie</li>
+</ul>
+
 

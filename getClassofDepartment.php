@@ -14,18 +14,25 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
+if(!isset($D0) )$D0 = "1021";
+if(!isset($D1) )$D1 = "AC1C";
+
 //Set Option
 $opts = array(
   'http'=>array(
     'method'=>"POST",
-    'content'=> 'HIS=1&IDNO=&ITEM=&D0=1012&D1=AC1C&D2=&CLASS_COD=&SECT_COD=&TYP=1&teacher=&crsname=&T3=&WKDAY=&SECT=&nowhis=1&B1=%B6%7D%A9l%ACd%B8%DF',
+    //'header' => 'Content-type: application/x-www-form-urlencoded\r\n',
+    'content'=> 'HIS=1&IDNO=&ITEM=&D0='.$D0.'&D1=' .$D1 . '&D2=&CLASS_COD=&SECT_COD=&TYP=1&teacher=&crsname=&T3=&WKDAY=&SECT=&nowhis=1&B1=%B6%7D%A9l%ACd%B8%DF',
   )
 );
+
 $context = stream_context_create($opts);
-if(!isset($D1) )$D1 = "AC1C";
 //Read File
-$handle = fopen("http://selcrs.nsysu.edu.tw/menu1/dplycourse.asp?D0=1012&D1=$D1&TYP=1&page=0", "r");
+//Old Uri = http://selcrs.nsysu.edu.tw/menu1/dplycourse.asp?D0=1012&D1=$D1&TYP=1&page=0
+$queryUri = 'http://selcrs.nsysu.edu.tw/menu1/dplycourse.asp';
+$handle = fopen($queryUri, "r",false,$context);
 $str = stream_get_contents($handle);
+//echo $str;
 //Parse HTML
 $doc = new DOMDocument();
 @$doc->loadHTML($str);
