@@ -69,7 +69,7 @@ for($i=0;$i<$itemLength;$i += 20){
 
 
 return $ans;
-
+if(!function_exists(formatHIS2)){
 function formatHIS2($tmp){
 
 	$tmp2 = array() ;
@@ -98,5 +98,5 @@ function formatHIS2($tmp){
 	$tmp2['ps'] = $tmp[20];
 	return $tmp2;
 }
-
+}
 ?>
