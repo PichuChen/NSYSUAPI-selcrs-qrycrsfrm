@@ -21,7 +21,7 @@ if(!isset($D1) )$D1 = "AC1C";
 $opts = array(
   'http'=>array(
     'method'=>"POST",
-    //'header' => 'Content-type: application/x-www-form-urlencoded\r\n',
+    'header' => 'Content-type: application/x-www-form-urlencoded\r\n',
     'content'=> 'HIS=2&IDNO=&ITEM=&D0='.$D0.'&D1=' .$D1 . '&D2=&CLASS_COD=&SECT_COD=&TYP=1&teacher=&crsname=&T3=&WKDAY=&SECT=&nowhis=1&B1=%B6%7D%A9l%ACd%B8%DF',
   )
 );
@@ -69,7 +69,6 @@ for($i=0;$i<$itemLength;$i += 20){
 
 
 return $ans;
-if(!function_exists(formatHIS2)){
 function formatHIS2($tmp){
 
 	$tmp2 = array() ;
@@ -97,6 +96,5 @@ function formatHIS2($tmp){
 			);
 	$tmp2['ps'] = $tmp[20];
 	return $tmp2;
-}
 }
 ?>
