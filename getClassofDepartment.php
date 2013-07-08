@@ -32,6 +32,10 @@ $context = stream_context_create($opts);
 $queryUri = 'http://selcrs.nsysu.edu.tw/menu1/dplycourse.asp';
 $handle = fopen($queryUri, "r",false,$context);
 $str = stream_get_contents($handle);
+if(strstr($str,"-19")){
+	return array();
+}
+
 //echo $str;
 //Parse HTML
 $doc = new DOMDocument();
