@@ -35,7 +35,7 @@ $handle = fopen("http://selcrs.nsysu.edu.tw/menu4/Studcheck.asp", "rb",false,$ct
 //$handle = fopen("http://selcrs.nsysu.edu.tw/scoreqry/sco_query.asp?action=1&SID=B983040003&PASSWD=193068",'r');
 $str = stream_get_contents($handle);
 $str=iconv("big5","UTF-8",$str); 
-if(!strcmp($str,'資料錯誤')){
+if(strcmp($str,'資料錯誤')){
 	return false;
 }else{
 	$meta = stream_get_meta_data($handle);
