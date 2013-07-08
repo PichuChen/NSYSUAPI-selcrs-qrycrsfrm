@@ -15,6 +15,8 @@
    limitations under the License.
 */
 
+$SID = urlencode($SID);
+$PASSWD = urlencode($PASSWD);
 
 //Set Option
 $opts = array(
