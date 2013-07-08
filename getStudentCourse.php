@@ -41,8 +41,8 @@ for($i = 2;$i < $courseList->length - 1 ;++$i){
 		$ans[] = $thisCourse->getElementsByTagName('td')->item(2)->nodeValue;
 	}	
 }
-echo json_encode($ans);
-
+//echo json_encode($ans);
+return $ans;
 exit;
 $ans = array();
 for($i=0;$i<$itemLength;$i += 20){
